@@ -1,0 +1,72 @@
+{
+  "version": 1,
+  "skills": [
+    {
+      "name": "frontend-design",
+      "displayName": "Frontend design",
+      "description": "Builds distinctive, production-grade web interfaces and avoids generic-looking pages.",
+      "github": "anthropics/skills/skills/frontend-design",
+      "tags": [
+        "design",
+        "frontend"
+      ]
+    },
+    {
+      "name": "mcp-builder",
+      "displayName": "MCP server builder",
+      "description": "Guides building a well-designed MCP server, in Python or TypeScript, that other tools can use.",
+      "github": "anthropics/skills/skills/mcp-builder",
+      "tags": [
+        "mcp",
+        "integration"
+      ]
+    },
+    {
+      "name": "webapp-testing",
+      "displayName": "Web app testing",
+      "description": "Tests a local web app in a real browser with Playwright, with screenshots and browser logs.",
+      "github": "anthropics/skills/skills/webapp-testing",
+      "tags": [
+        "testing",
+        "browser"
+      ]
+    },
+    {
+      "name": "skill-creator",
+      "displayName": "Skill creator",
+      "description": "Helps write, test and improve a skill of your own, with examples to check it against.",
+      "github": "anthropics/skills/skills/skill-creator",
+      "tags": [
+        "skills"
+      ]
+    },
+    {
+      "name": "web-artifacts-builder",
+      "displayName": "Web artifacts builder",
+      "description": "Builds multi-part web pages with React, Tailwind and shadcn components, bundled into one file.",
+      "github": "anthropics/skills/skills/web-artifacts-builder",
+      "tags": [
+        "frontend"
+      ]
+    },
+    {
+      "name": "theme-factory",
+      "displayName": "Theme factory",
+      "description": "Applies a ready-made colour and font theme to slides, documents or pages.",
+      "github": "anthropics/skills/skills/theme-factory",
+      "tags": [
+        "design"
+      ]
+    },
+    {
+      "name": "claude-api",
+      "displayName": "Claude API",
+      "description": "Reference for building with the Claude API and its SDKs in several languages.",
+      "github": "anthropics/skills/skills/claude-api",
+      "tags": [
+        "api",
+        "ai"
+      ]
+    }
+  ]
+}

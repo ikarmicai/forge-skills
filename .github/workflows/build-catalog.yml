@@ -1,0 +1,40 @@
+# After a merge to main, skills-catalog.json is rebuilt from skills/<name>/SKILL.md, so a pull request never edits it and two
+# pull requests never conflict. Runs only on main, after review.
+name: Build catalog
+
+on:
+  push:
+    branches: [main]
+    paths: ['skills/**', 'scripts/catalog.mjs']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-catalog
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Test the builder
+        run: node --test scripts/catalog.test.mjs
+      - name: Build the catalog
+        run: node scripts/catalog.mjs build
+      - name: Commit it when it changed
+        run: |
+          if git diff --quiet -- skills-catalog.json; then
+            echo "The catalog is up to date."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add skills-catalog.json
+          git commit -m "Build the catalog from skills/"
+          git push
